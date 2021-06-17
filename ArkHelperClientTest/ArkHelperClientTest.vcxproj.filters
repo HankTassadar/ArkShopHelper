@@ -27,6 +27,12 @@
     <ClCompile Include="..\Class\sqlite3.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\Class\ArkHelperFileUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Class\FileUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Class\ArkHelperServerAndClient.h">
@@ -42,6 +48,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\Class\sqlite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Class\ArkHelperFileUpdate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Class\FileUpdate.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

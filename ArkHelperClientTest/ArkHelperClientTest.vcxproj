@@ -78,16 +78,17 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Administrator\source\repos\方舟商店助手\include;C:\Users\Administrator\source\repos\方舟商店助手\Class;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Administrator\source\repos\方舟商店助手\lib\Debug\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;$(SourcePath)</SourcePath>
+    <IncludePath>$(SolutionDir)\include;$(SolutionDir)\Class;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\Debug\x64;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\ArkHelper_TestClient\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Administrator\source\repos\方舟商店助手\include;C:\Users\Administrator\source\repos\方舟商店助手\Class;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Administrator\source\repos\方舟商店助手\lib\Release\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;$(SourcePath)</SourcePath>
+    <IncludePath>$(SolutionDir)\include;$(SolutionDir)\Class;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\ArkHelper_TestClient\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -148,13 +149,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Class\ArkHelperFileUpdate.cpp" />
     <ClCompile Include="..\Class\ArkHelperServerAndClient.cpp" />
+    <ClCompile Include="..\Class\FileUpdate.cpp" />
     <ClCompile Include="..\Class\ServiceRegisterPortocol.cpp" />
     <ClCompile Include="..\Class\sqlite3.c" />
     <ClCompile Include="ArkHelperClientTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Class\ArkHelperFileUpdate.h" />
     <ClInclude Include="..\Class\ArkHelperServerAndClient.h" />
+    <ClInclude Include="..\Class\FileUpdate.h" />
     <ClInclude Include="..\Class\ServerDatabase.hpp" />
     <ClInclude Include="..\Class\ServiceRegister.hpp" />
     <ClInclude Include="..\Class\ServiceRegisterPortocol.h" />
