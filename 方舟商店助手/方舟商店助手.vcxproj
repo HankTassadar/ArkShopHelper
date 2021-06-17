@@ -56,15 +56,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;C:\Users\Administrator\source\repos\方舟商店助手\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Administrator\source\repos\方舟商店助手\lib\Debug\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;$(SourcePath)</SourcePath>
+    <IncludePath>$(IncludePath);$(SolutionDir)\include;$(SolutionDir)\Class</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\Debug\x64;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
     <TargetName>ArkHelper</TargetName>
+    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)\ArkHelper\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <IncludePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;C:\Users\Administrator\source\repos\方舟商店助手\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Administrator\source\repos\方舟商店助手\lib\Release\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\Administrator\source\repos\方舟商店助手\Class;$(SourcePath)</SourcePath>
+    <IncludePath>$(SolutionDir)\Class;$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\ArkHelper\</OutDir>
     <TargetName>ArkHelper</TargetName>
   </PropertyGroup>

@@ -16,12 +16,11 @@ MainWindow::MainWindow(QWidget* parent)
     , kitpageReady(false)
 {
 
-
-    //网络连接客户端客户端单例初始化
+    //网络连接客户端客户端单例初始化,Debug模式下连接127.0.0.1，Release模式下连接工作服务器
 #ifdef DEBUG
     this->_client = ArkHelper::ArkHelperServerAndClient::GetInstance(16338, "127.0.0.1");
 #elif RELEASE
-        //从从服务注册查询服务器中查询当前服务的IP地址与端口
+    //从从服务注册查询服务器中查询当前服务的IP地址与端口
     ServiceQuery query({ "49.232.218.70",35996,uv::SocketAddr::Ipv4 }, 10005);
     auto ipPort = query.query("ArkHelperService");
     if (ipPort.second == 0) {
@@ -35,12 +34,12 @@ MainWindow::MainWindow(QWidget* parent)
 #endif // DEBUG
 
     
-    this->_client->waitForConnected();
+    this->_client->waitForConnected();//等待服务器连接完成
     //从服务端获得商店数据
     this->_client->getShopData();
     this->shopdata = this->_client->showShopData();
 
-    //Ark操作单例的初始化并给予命令
+    //Ark窗口操作单例的初始化并赋予命令字符串
     std::string buycmd = shopdata["Messages"]["BuyCmd"].get<std::string>();
     std::string kitcmd = shopdata["Messages"]["KitCmd"].get<std::string>();
     std::string sellcmd = shopdata["Messages"]["SellCmd"].get<std::string>();
@@ -93,6 +92,7 @@ bool MainWindow::nativeEvent(const QByteArray& eventType, void* message, qintptr
     return false;
 }
 
+//使用代码创建的控件
 void MainWindow::createUI()
 {
     this->createMainUI();
