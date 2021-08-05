@@ -78,9 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\Class;$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\protobuf\src_cpp\proto;$(SolutionDir)\Class;$(SolutionDir)\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\lib\Debug\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
+    <SourcePath>$(SolutionDir)\protobuf\src_cpp\proto;$(SolutionDir)\Class;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\ArkHelper_Server\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Class\ArkHelperServerAndClient.cpp" />
+    <ClCompile Include="..\Class\ArkPlayer.cpp" />
     <ClCompile Include="..\Class\FileUpdate.cpp" />
     <ClCompile Include="..\Class\ServiceRegisterPortocol.cpp" />
     <ClCompile Include="..\Class\sqlite3.c" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Class\ArkHelperServerAndClient.h" />
+    <ClInclude Include="..\Class\ArkPlayer.h" />
     <ClInclude Include="..\Class\FileUpdate.h" />
     <ClInclude Include="..\Class\ServerDatabase.hpp" />
     <ClInclude Include="..\Class\ServiceRegister.hpp" />

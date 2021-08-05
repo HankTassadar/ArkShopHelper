@@ -56,9 +56,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>$(IncludePath);$(SolutionDir)\include;$(SolutionDir)\Class</IncludePath>
+    <IncludePath>$(SolutionDir)\protobuf\src_cpp\proto;$(IncludePath);$(SolutionDir)\include;$(SolutionDir)\Class</IncludePath>
     <LibraryPath>$(SolutionDir)\lib\Debug\x64;$(LibraryPath)</LibraryPath>
-    <SourcePath>$(SolutionDir)\Class;$(SourcePath)</SourcePath>
+    <SourcePath>$(SolutionDir)\protobuf\src_cpp\proto;$(SolutionDir)\Class;$(SourcePath)</SourcePath>
     <TargetName>ArkHelper</TargetName>
     <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)\ArkHelper\</OutDir>
   </PropertyGroup>

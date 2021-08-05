@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+
+//用户登录
+message CSPlayerLoginReq
+{
+    optional string SteamID = 1;
+    optional string PassWord = 2;
+}
+
+//用户登录返回包
+message CSPlayerLoginRes
+{
+    enum LoginState
+    {
+        SUCCESS = 0;
+        ERR_PASSWORD = 1;   //密码错误
+        NO_STEAMID = 2;     //没找到steamid
+        NO_PASSWORD = 3;    //该steamid还未设定密码，请先设定密码
+    }
+    optional LoginState State = 1;
+}
+
+
+//请求用户个人数据
+message CSUpdatePlayerDataReq
+{
+}
+//返回用户个人数据
+message CSUpdatePlayerDataRes
+{
+    optional int32 Vip = 1;
+    optional int32 Points = 2;
+}
+
+//请求商店信息
+message CSGetShopDataReq
+{
+}
+//返回商店信息
+message CSGetShopDataRes
+{
+    optional string ShopData = 1;   //商店数据的json
+}
+
+//请求玩家礼包信息
+message CSGetKitDataReq
+{
+}
+//返回玩家礼包信息
+message CSGetKitDataRes
+{
+    optional string KitData = 1;    //礼包数据的json
+}
+
+//服务器通知客户端各个游戏服务器的在线状态以及端口
+message SServerOnlineNotify
+{
+    message Server
+    {
+        optional string name = 1;
+        optional int32 port = 2;
+        optional bool state = 3;
+    }
+    repeated Server AllServers = 1;
+}

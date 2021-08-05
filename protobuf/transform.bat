@@ -1,0 +1,1 @@
+protoc.exe proto/*.proto --cpp_out="src_cpp/"
